@@ -34,6 +34,9 @@ class InputData(BaseModel):
     valence: float
     tempo: float
 
+@app.get("/hello")
+def hello():
+    return {"message": "Hello, World!"}
 
 @app.post("/predict")
 def predict(data: InputData):
