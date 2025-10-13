@@ -11408,3 +11408,95 @@ ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. 
 'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
 2025-10-13 16:36:40,959:INFO:Initializing load_model()
 2025-10-13 16:36:40,959:INFO:load_model(model_name=best_model_gbc, platform=None, authentication=None, verbose=True)
+2025-10-13 17:44:06,192:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-10-13 17:44:06,192:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-10-13 17:44:06,192:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-10-13 17:44:06,192:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-10-13 17:44:07,379:INFO:Initializing load_model()
+2025-10-13 17:44:07,379:INFO:load_model(model_name=best_model_gbc, platform=None, authentication=None, verbose=True)
+2025-10-13 17:48:10,444:INFO:Initializing predict_model()
+2025-10-13 17:48:10,444:INFO:predict_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x0000020A965295D0>, estimator=Pipeline(memory=Memory(location=None),
+         steps=[('label_encoding',
+                 TransformerWrapperWithInverse(transformer=LabelEncoder())),
+                ('numerical_imputer',
+                 TransformerWrapper(include=['danceability', 'energy',
+                                             'loudness', 'mode', 'acousticness',
+                                             'instrumentalness', 'liveness',
+                                             'valence', 'tempo'],
+                                    transformer=SimpleImputer())),
+                ('categorical_imputer',
+                 TransformerWrapper(include=[],
+                                    transformer=SimpleImputer(strategy='most_frequent'))),
+                ('trained_model', GradientBoostingClassifier(random_state=42))]), probability_threshold=None, encoded_labels=False, raw_score=False, round=4, verbose=True, ml_usecase=None, preprocess=True, encode_labels=<function _SupervisedExperiment.predict_model.<locals>.encode_labels at 0x0000020A9653A2A0>)
+2025-10-13 17:48:10,444:INFO:Checking exceptions
+2025-10-13 17:48:10,444:INFO:Preloading libraries
+2025-10-13 17:48:10,444:INFO:Set up data.
+2025-10-13 17:48:10,446:INFO:Set up index.
+2025-10-13 17:48:12,270:INFO:Initializing predict_model()
+2025-10-13 17:48:12,270:INFO:predict_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x0000020A962AD510>, estimator=Pipeline(memory=Memory(location=None),
+         steps=[('label_encoding',
+                 TransformerWrapperWithInverse(transformer=LabelEncoder())),
+                ('numerical_imputer',
+                 TransformerWrapper(include=['danceability', 'energy',
+                                             'loudness', 'mode', 'acousticness',
+                                             'instrumentalness', 'liveness',
+                                             'valence', 'tempo'],
+                                    transformer=SimpleImputer())),
+                ('categorical_imputer',
+                 TransformerWrapper(include=[],
+                                    transformer=SimpleImputer(strategy='most_frequent'))),
+                ('trained_model', GradientBoostingClassifier(random_state=42))]), probability_threshold=None, encoded_labels=False, raw_score=False, round=4, verbose=True, ml_usecase=None, preprocess=True, encode_labels=<function _SupervisedExperiment.predict_model.<locals>.encode_labels at 0x0000020A96551B20>)
+2025-10-13 17:48:12,270:INFO:Checking exceptions
+2025-10-13 17:48:12,270:INFO:Preloading libraries
+2025-10-13 17:48:12,270:INFO:Set up data.
+2025-10-13 17:48:12,270:INFO:Set up index.
+2025-10-13 17:48:12,866:INFO:Initializing predict_model()
+2025-10-13 17:48:12,866:INFO:predict_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x0000020A965346D0>, estimator=Pipeline(memory=Memory(location=None),
+         steps=[('label_encoding',
+                 TransformerWrapperWithInverse(transformer=LabelEncoder())),
+                ('numerical_imputer',
+                 TransformerWrapper(include=['danceability', 'energy',
+                                             'loudness', 'mode', 'acousticness',
+                                             'instrumentalness', 'liveness',
+                                             'valence', 'tempo'],
+                                    transformer=SimpleImputer())),
+                ('categorical_imputer',
+                 TransformerWrapper(include=[],
+                                    transformer=SimpleImputer(strategy='most_frequent'))),
+                ('trained_model', GradientBoostingClassifier(random_state=42))]), probability_threshold=None, encoded_labels=False, raw_score=False, round=4, verbose=True, ml_usecase=None, preprocess=True, encode_labels=<function _SupervisedExperiment.predict_model.<locals>.encode_labels at 0x0000020A96672480>)
+2025-10-13 17:48:12,866:INFO:Checking exceptions
+2025-10-13 17:48:12,866:INFO:Preloading libraries
+2025-10-13 17:48:12,866:INFO:Set up data.
+2025-10-13 17:48:12,868:INFO:Set up index.
+2025-10-13 17:51:05,885:INFO:Initializing predict_model()
+2025-10-13 17:51:05,885:INFO:predict_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x0000020A96591910>, estimator=Pipeline(memory=Memory(location=None),
+         steps=[('label_encoding',
+                 TransformerWrapperWithInverse(transformer=LabelEncoder())),
+                ('numerical_imputer',
+                 TransformerWrapper(include=['danceability', 'energy',
+                                             'loudness', 'mode', 'acousticness',
+                                             'instrumentalness', 'liveness',
+                                             'valence', 'tempo'],
+                                    transformer=SimpleImputer())),
+                ('categorical_imputer',
+                 TransformerWrapper(include=[],
+                                    transformer=SimpleImputer(strategy='most_frequent'))),
+                ('trained_model', GradientBoostingClassifier(random_state=42))]), probability_threshold=None, encoded_labels=False, raw_score=False, round=4, verbose=True, ml_usecase=None, preprocess=True, encode_labels=<function _SupervisedExperiment.predict_model.<locals>.encode_labels at 0x0000020A966722A0>)
+2025-10-13 17:51:05,885:INFO:Checking exceptions
+2025-10-13 17:51:05,885:INFO:Preloading libraries
+2025-10-13 17:51:05,886:INFO:Set up data.
+2025-10-13 17:51:05,890:INFO:Set up index.
+2025-10-13 17:52:50,596:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-10-13 17:52:50,596:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-10-13 17:52:50,596:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-10-13 17:52:50,598:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-10-13 17:52:51,721:INFO:Initializing load_model()
+2025-10-13 17:52:51,721:INFO:load_model(model_name=best_model_gbc, platform=None, authentication=None, verbose=True)
