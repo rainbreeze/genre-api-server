@@ -11,5 +11,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-# 환경변수 PORT가 주어질 때만 사용되도록 CMD 수정
-CMD uvicorn app:app --host 0.0.0.0 --port ${PORT:-8000}
+CMD ["sh", "-c", "uvicorn app:app --host 0.0.0.0 --port ${PORT:-8000}"]
