@@ -19,7 +19,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-model = load_model("best_model_gbc")
+model = load_model("best_model_full")
 
 
 # 입력 데이터 스키마 정의 (장르 제외한 9개 특성)
