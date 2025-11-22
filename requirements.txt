@@ -2,3 +2,6 @@ fastapi
 uvicorn[standard]
 pandas
 pycaret
+boto3
+joblib
+python-dotenv
