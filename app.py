@@ -28,7 +28,7 @@ AWS_SECRET_KEY = os.getenv("AWS_SECRET_ACCESS_KEY")
 AWS_REGION = os.getenv("AWS_REGION")
 BUCKET_NAME = os.getenv("BUCKET_NAME")
 MODEL_KEY = os.getenv("MODEL_KEY")
-LOCAL_MODEL_PATH = "best_model_gbc.pkl"
+LOCAL_MODEL_PATH = os.getenv("LOCAL_MODEL_PATH")
 
 # S3에서 모델 다운로드
 def download_model_from_s3():
