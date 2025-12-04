@@ -1,23 +1,48 @@
 import pandas as pd
-from pycaret.classification import *
+import numpy as np
+from pycaret.classification import load_model, predict_model
+from collections import Counter
 
-# 1. CSV 파일 불러오기
-df = pd.read_csv('./dataset/1001_CSV.csv')
+# 1. 모델 불러오기
+model = load_model("genre_classifier")
 
-# 2. Genre 컬럼의 결측값 있는 행 제거
-df = df.dropna(subset=['Genre'])
+# 2. 학습 데이터 불러오기 (컬럼별 min/max 확인용)
+df_train = pd.read_csv("filtered_file.csv")
 
-# 3. PyCaret 셋업
-clf = setup(
-    data=df,
-    target='Genre',
-    session_id=42,
-    verbose=False
-)
+feature_cols = [
+    "danceability", "energy", "loudness", "mode",
+    "acousticness", "instrumentalness", "liveness", "valence", "tempo"
+]
 
-# 4. 모델 비교
-best_model = compare_models()
+# 각 컬럼별 최소/최대값 계산
+feature_stats = {}
+for col in feature_cols:
+    if col == "mode":  # mode는 0 또는 1
+        feature_stats[col] = [0, 1]
+    else:
+        feature_stats[col] = [df_train[col].min(), df_train[col].max()]
 
-# 5. 결과 보기
-results = pull()
-print(results)
+# 3. 학습 데이터 분포 기반 랜덤 샘플 생성
+n_samples = 1000
+random_samples = []
+
+for _ in range(n_samples):
+    sample = {}
+    for col in feature_cols:
+        min_val, max_val = feature_stats[col]
+        if col == "mode":
+            sample[col] = np.random.choice([0, 1])
+        else:
+            sample[col] = np.random.uniform(min_val, max_val)
+    random_samples.append(sample)
+
+df_random = pd.DataFrame(random_samples)
+
+# 4. 예측
+preds = predict_model(model, data=df_random)
+
+# 5. 장르별 분포 확인
+genre_counts = Counter(preds["prediction_label"])
+print("랜덤 데이터 기반 장르 분포:")
+for genre, count in genre_counts.items():
+    print(f"{genre}: {count}")

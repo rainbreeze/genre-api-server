@@ -1,24 +1,30 @@
+# 필요한 라이브러리
 import pandas as pd
-from pycaret.classification import *
+import numpy as np
+from pycaret.classification import setup, compare_models, finalize_model, save_model, predict_model
+from collections import Counter
 
-# 1. CSV 파일 불러오기
-df = pd.read_csv('./dataset/1001_CSV.csv')  # 실제 파일명으로 변경하세요
+# 1. 데이터 로드
+df = pd.read_csv("filtered_file.csv")  # 파일명 변경 필요
 
-# 2. Genre 컬럼 결측값 제거
-df = df.dropna(subset=['Genre'])
-
-# 3. PyCaret 셋업
-clf = setup(
+# 2. PyCaret setup (기본 전처리 + 클래스 불균형 처리)
+clf_setup = setup(
     data=df,
     target='Genre',
     session_id=42,
-    verbose=False
+    normalize=True,
+    transformation=True,
+    remove_multicollinearity=True,
+    multicollinearity_threshold=0.95,
+    fix_imbalance=True  # 클래스 불균형 보정
 )
 
-# 4. 모델 비교 후 최적 모델 선택 (gbc가 가장 좋았음)
-best_model = compare_models()
+# 3. 모델 비교
+best_model = compare_models(sort='Accuracy')
 
-# 5. 최적 모델 저장
-save_model(best_model, 'best_model_gbc')
+# 4. 모델 최종화
+final_model = finalize_model(best_model)
 
-print("모델 학습 및 저장 완료!")
+# 5. 모델 저장
+save_model(final_model, "genre_classifier")
+print("모델 학습 완료! 'genre_classifier.pkl'로 저장됨")
