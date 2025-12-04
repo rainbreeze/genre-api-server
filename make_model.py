@@ -5,7 +5,7 @@ from pycaret.classification import setup, compare_models, finalize_model, save_m
 from collections import Counter
 
 # 1. 데이터 로드
-df = pd.read_csv("filtered_file.csv")  # 파일명 변경 필요
+df = pd.read_csv("generated_30000.csv")  # 파일명 변경 필요
 
 # 2. PyCaret setup (기본 전처리 + 클래스 불균형 처리)
 clf_setup = setup(

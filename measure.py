@@ -7,7 +7,7 @@ from collections import Counter
 model = load_model("genre_classifier")
 
 # 2. 학습 데이터 불러오기 (컬럼별 min/max 확인용)
-df_train = pd.read_csv("filtered_file.csv")
+df_train = pd.read_csv("generated_30000.csv")
 
 feature_cols = [
     "danceability", "energy", "loudness", "mode",
